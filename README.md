@@ -45,9 +45,22 @@ For this I performed several thresholding operations on color and edge images.
 ### Sobel Edge Detection
 
 After converting the image to grayscale, edge detection is performed separately for x- and y-direction by convolving the image with a respective sobel kernel that simultaneously also smooths the image.
-Afterwards a sobel binary image is created that only has ones at the locations where there is a large gradient in x-direction and a small gradient in y-direction (cell 12)
+Afterwards a sobel binary image is created that only contains ones at the locations where there is a large gradient in x-direction and a small gradient in y-direction (cell 12)
 
 #TODO example images
+
+### Color Channel Thresholding
+
+The warped (birds-eye-view) color image gets converted to the HLS color space where a threshold is applied to the S-channel.
+Another color threshold is applied to the R-channel of the warped color image in BGR color space. 
+The two resulting binary images get combined with the logical "AND" operation to yield a common binary image.
+
+#TODO example images
+
+### Combination of Edge and Color Information
+
+
+
 
 
 
