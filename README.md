@@ -1,4 +1,4 @@
-# Lane LineDetection
+# Adavanced Lane Line Detection
 
 The goal of this project was to detect the lane line markings of the ego-lane using camera images.
 To achieve this, the following steps were performed:
@@ -22,9 +22,16 @@ All of the code for completing the project is contained in [this jupyter noteboo
 ## Camera Calibration
 
 To compensate for the distortion effects (e.g. radial or tangential distortion) introduced by the camera lense a series of calibration images showing a calibration pattern (chessboard pattern) was has been provided.
-After detecting the corners of the chessboard pattern in multiple images, I used OpenCV's "calibrateCamera(...)" function to calculate the distorition coefficients of the lense (notebook cell ).
-These coefficients then get used to undistort camera images
+After detecting the corners of the chessboard pattern in multiple images, I used OpenCV's "calibrateCamera(...)" function to calculate the distorition coefficients of the lense (notebook cell 3).
+These coefficients then get used in a function to undistort camera images (notebook cell 4).
 
+## Perspective Transformation
+
+The detection of lane lines is much easier when looking at the road from a birds-eye-view.
+To achieve this view a perspective transformation gets applied to the camera image.
+Cells 5 and 6 of the notebook provide the user with the opportunity to draw a transformed rectangle onto a camera image which corresponds to a normal rectangle in the birds-eye-view.
+The coordinates of the rectangle corners then are used to calculate a perspective transformation matrix (cell 6)
+Images can now be transformed ('warped') to and back from a birds-eye-view using the functions defined in cell 7 of the notebook. 
 
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
