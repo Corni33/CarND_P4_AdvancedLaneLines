@@ -25,6 +25,11 @@ These coefficients then get used in a function to undistort camera images (noteb
 
 #TODO images of calibration pattern and calibration result
 
+![alt-text-1](./readme_images/chessboard_dist.png "Distorted Image") ![alt-text-1](./readme_images/chessboard_undist.png "Distorted Image") 
+
+
+
+
 ## Perspective Transformation
 
 The detection of lane lines is much easier when looking at the road from a birds-eye-view.
