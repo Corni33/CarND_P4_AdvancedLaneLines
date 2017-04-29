@@ -25,7 +25,9 @@ To compensate for the distortion effects (e.g. radial or tangential distortion) 
 After detecting the corners of the chessboard pattern in multiple images, I used OpenCV's "calibrateCamera(...)" function to calculate the distorition coefficients of the lense (notebook cell 3).
 These coefficients then get used in a function to undistort camera images (notebook cell 4).
 
-## Perspective Transformation
+#TODO images of calibration pattern and calibration result
+
+# Perspective Transformation
 
 The detection of lane lines is much easier when looking at the road from a birds-eye-view.
 To achieve this view a perspective transformation gets applied to the camera image.
@@ -33,12 +35,14 @@ Cells 5 and 6 of the notebook provide the user with the opportunity to draw a tr
 The coordinates of the rectangle corners then are used to calculate a perspective transformation matrix (cell 6)
 Images can now be transformed ('warped') to and back from a birds-eye-view using the functions defined in cell 7 of the notebook. 
 
+#TODO images of perspective transformation and rectange maybe?
 
-## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
+## Lane Line Detection
 
-### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
+I now used the  warped camera image to detect pixels which are likely part of a lane line.
 
----
+
+
 
 ### Writeup / README
 
