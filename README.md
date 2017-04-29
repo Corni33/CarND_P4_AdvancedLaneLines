@@ -36,13 +36,12 @@ Cells 5 and 6 of the notebook provide the user with the opportunity to draw a tr
 The coordinates of the rectangle corners then are used to calculate a perspective transformation matrix (cell 6)
 Images can now be transformed ('warped') to and back from a birds-eye-view using the functions defined in cell 7 of the notebook. 
 
-![alt-text-1](./readme_images/persp_normal.png "Normal image") ![alt-text-1](./readme_images/persp_top.png "Perspective transformed image") 
+![alt-text-1](./readme_images/perspective_normal.png "Normal image") ![alt-text-1](./readme_images/perspective_top.png "Perspective transformed image") 
 
 
 ## Lane Line Detection
 
-I now used the  warped camera image to detect pixels which are likely part of a lane line.
-For this I performed several thresholding operations on color and edge images.
+The  warped camera image serves as a basis for detecting pixels which are likely part of a lane line before fitting a polynomial to get a functional description of each of the lane lines. 
 
 ### Edge Detection
 
