@@ -42,25 +42,44 @@ Images can now be transformed ('warped') to and back from a birds-eye-view using
 I now used the  warped camera image to detect pixels which are likely part of a lane line.
 For this I performed several thresholding operations on color and edge images.
 
-### Sobel Edge Detection
+### Edge Detection
 
-After converting the image to grayscale, edge detection is performed separately for x- and y-direction by convolving the image with a respective sobel kernel that simultaneously also smooths the image.
-Afterwards a sobel binary image is created that only contains ones at the locations where there is a large gradient in x-direction and a small gradient in y-direction (cell 12)
+After converting the image to grayscale, edge detection is performed separately for x- and y-direction by convolving the image with a sobel kernel that simultaneously smooths the image.
+Afterwards a sobel binary image is created (via thresholding) that only contains ones at the locations where there is a large gradient in x-direction and a small gradient in y-direction (cell 12)
 
 #TODO example images
 
 ### Color Channel Thresholding
 
-The warped (birds-eye-view) color image gets converted to the HLS color space where a threshold is applied to the S-channel.
+The warped (birds-eye-view) color image gets converted to HLS color space where a threshold is applied to the S-channel.
 Another color threshold is applied to the R-channel of the warped color image in BGR color space. 
-The two resulting binary images get combined with the logical "AND" operation to yield a common binary image.
+The two resulting binary images get combined via logical "AND" operation to yield a common binary image.
 
 #TODO example images
 
 ### Combination of Edge and Color Information
 
+The binary image from color thresholding now gets combined with the binary image from edge detection via logical "OR".
+The result of this operation is a single binary image containing ones where we expect either lane line edges or the lane line marking itself to be.
+Unfortunately most of the time an image contains other features that get misclassified as being part of the lane lines (a.g. road border, parts of other vehicles, ...) when applying the above thresholding logic. 
+
+#TODO images
+
+### Line Area Masking
+
+The binary image  
 
 
+
+
+
+clean up
+
+masking
+
+poly fitting
+
+mask creation
 
 
 
