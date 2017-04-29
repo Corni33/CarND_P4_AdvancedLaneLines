@@ -32,11 +32,12 @@ The left image has not been edited while the right image has been corrected for 
 
 The detection of lane lines is much easier when looking at the road from a birds-eye-view.
 To achieve this view a perspective transformation gets applied to the camera image.
-Cells 5 and 6 of the notebook provide the user with the opportunity to draw a transformed rectangle onto a camera image which corresponds to a normal rectangle in the birds-eye-view.
+Cells 5 and 6 of the notebook provide the user with the opportunity to draw a transformed rectangle onto a camera image which corresponds to a standard rectangle in the birds-eye-view.
 The coordinates of the rectangle corners then are used to calculate a perspective transformation matrix (cell 6)
 Images can now be transformed ('warped') to and back from a birds-eye-view using the functions defined in cell 7 of the notebook. 
 
-#TODO images of perspective transformation and rectange maybe?
+![alt-text-1](./readme_images/persp_normal.png "Normal image") ![alt-text-1](./readme_images/persp_top.png "Perspective transformed image") 
+
 
 ## Lane Line Detection
 
