@@ -1,4 +1,4 @@
-## Lane LineDetection
+# Lane LineDetection
 
 The goal of this project was to detect the lane line markings of the ego-lane using camera images.
 To achieve this, the following steps were performed:
@@ -9,12 +9,21 @@ To achieve this, the following steps were performed:
 * Determining the curvature of the lane and vehicle position with respect to the lane center
 * Overlaying the detected lane markings onto the original camera image 
 
+All of the code for completing the project is contained in [this jupyter notebook](https://github.com/Corni33/CarND_P4_AdvancedLaneLines/blob/master/advanced_lane_lines.ipynb).
+
 
 [//]: # (Image References)
 [images_orig]: ./images_orig.png "Recorded images (center, left and right camera)"
 [images_cropped]: ./images_cropped.png "Images cropped to exclude unnecessary data"
 [images_mirrored]: ./images_cropped_mirrored.png "Mirrored images"
 [loss_function]: ./training_loss.png "MSE loss for training and validation data"
+
+
+## Camera Calibration
+
+To compensate for the distortion effects (e.g. radial or tangential distortion) introduced by the camera lense a series of calibration images showing a calibration pattern (chessboard pattern) was has been provided.
+After detecting the corners of the chessboard pattern in multiple images, I used OpenCV's "calibrateCamera(...)" function to calculate the distorition coefficients of the lense (notebook cell ).
+These coefficients then get used to undistort camera images
 
 
 
