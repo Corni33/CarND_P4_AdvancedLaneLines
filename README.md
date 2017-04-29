@@ -27,7 +27,7 @@ These coefficients then get used in a function to undistort camera images (noteb
 
 #TODO images of calibration pattern and calibration result
 
-# Perspective Transformation
+## Perspective Transformation
 
 The detection of lane lines is much easier when looking at the road from a birds-eye-view.
 To achieve this view a perspective transformation gets applied to the camera image.
@@ -40,6 +40,16 @@ Images can now be transformed ('warped') to and back from a birds-eye-view using
 ## Lane Line Detection
 
 I now used the  warped camera image to detect pixels which are likely part of a lane line.
+For this I performed several thresholding operations on color and edge images.
+
+### Sobel Edge Detection
+
+After converting the image to grayscale, edge detection is performed separately for x- and y-direction by convolving the image with a respective sobel kernel that simultaneously also smooths the image.
+Afterwards a sobel binary image is created that only has ones at the locations where there is a large gradient in x-direction and a small gradient in y-direction (cell 12)
+
+#TODO example images
+
+
 
 
 
