@@ -63,11 +63,29 @@ The binary image from color thresholding now gets combined with the binary image
 The result of this operation is a single binary image containing ones where we expect either lane line edges or the lane line marking itself to be.
 Unfortunately most of the time an image contains other features that get misclassified as being part of the lane lines (a.g. road border, parts of other vehicles, ...) when applying the above thresholding logic. 
 
-#TODO images
+#TODO example images
 
 ### Line Area Masking
 
-The binary image  
+To get a better estimate of which pixels belong to the left and right lane line, the binary image now gets masked (= applying logical "AND") with one mask for each each lane line.
+A lane line mask contains an area estimate for where the lane line might be now given that we know where it was in the last frame that has been processed.
+
+#TODO example images
+
+### Polynomial Fitting
+
+All the white pixels (ones) of each lane line binary image now get used as data points for fitting a parabola (cell ...). 
+To make this fit more robust against outliers I used the RANSAC algorithm instead of standard least squares polynomial fitting.
+The results of this step are two sets of polynomial coefficients describing each lane line in a functional form.
+
+#TODO example images
+
+
+
+
+
+
+
 
 
 
