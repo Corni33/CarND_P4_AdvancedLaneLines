@@ -41,8 +41,7 @@ Images can now be transformed ('warped') to and back from a birds-eye-view using
 
 ## Lane Line Detection
 
-I now used the  warped camera image to detect pixels which are likely part of a lane line.
-For this I performed several thresholding operations on color and edge images.
+The  warped camera image serves as a basis for detecting pixels which are likely part of a lane line before fitting a polynomial to get a functional description of each of the lane lines. 
 
 ### Edge Detection
 
