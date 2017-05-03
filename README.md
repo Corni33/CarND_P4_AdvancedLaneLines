@@ -76,34 +76,28 @@ In a first attempt to improve on this situation small isolated spots get removed
 
 ### Line Area Masking
 
-To get an estimate of which pixels belong to the left and right lane line, the binary image now gets masked (= applying logical "AND") with a distinct lane line mask for each each lane line.
-A lane line mask contains an area estimate for where the lane line might be now given that we know where it was in the last frame that has been processed.
+To get a better estimate of which pixels belong to the left and right lane line respectively, the binary image now gets masked (by applying logical "AND") with a distinct lane line mask for each lane line.
+A lane line mask contains an area estimate for where the lane line might be now given that we know where it was in the last frame that has been processed:
 
-#TODO example images
+![alt-text-1](./readme_images/mask_left.png "mask for left lane line") ![alt-text-1](./readme_images/mask_right.png "mask for right lane line")
 
 ### Polynomial Fitting
 
-All the white pixels (ones) of each lane line binary image now get used as data points for fitting a parabola (cell ...). 
-To make this fit more robust against outliers I used the RANSAC algorithm instead of standard least squares polynomial fitting.
+All the white pixels of each lane line binary image now get used as data points for fitting a parabola (cell ...). 
+To make this fit more robust against outliers the RANSAC algorithm gets used instead of standard least squares polynomial fitting.
 The results of this step are two sets of polynomial coefficients describing each lane line in a functional form.
 
-#TODO example images
+![alt-text-1](./readme_images/left_fit.png "parabola fitted for left lane line") ![alt-text-1](./readme_images/right_fit.png "parabola fitted for right lane line")
 
 From the polynomial coefficients the curvature of the lane at the vehicles current position as well as the vehicles lateral offset to the lane center can now be caluclated (cell ...).
-
-The polynomial additionally gets used to generate the lane mask for the next frame:
-
-#TODO example images
+The polynomial additionally gets used to generate the lane mask for the next frame. In the very first frame of a video the masks get initialized with a rough estimate of the lane line positions.
 
 ### Lane Overlay 
 
-After the lane lines have been identified in the warped image the lane in the original image gets highlighting by 'unwarping' the polynomials and using them as boundary points for a lane polygon (cell ...). Cusrvature and lateral offset are also displayed in the image.
+After the lane lines have been identified in the warped image the lane in the original image gets highlighting by 'unwarping' the polynomial's points and using them as boundary points for a lane polygon (cell ...). 
+Curvature and lateral offset are also displayed in the image:
 
-
-
-
-
-
+![alt-text-1](./readme_images/left_fit.png "final image with lane overlay") 
 
 
 
