@@ -99,7 +99,7 @@ The values of curvature and lateral offset are filtered by a low pass filter and
 
 Now that individual images can be processed using information from a time-wise preceding image, this pipeline gets applied to a series of images from a video stream.
 
-All of the code for completing the project is contained in [this jupyter notebook](https://github.com/Corni33/CarND_P4_AdvancedLaneLines/blob/master/advanced_lane_lines.ipynb).
+Here's a [link to the video result](./output.mp4)
 
 
 
@@ -107,7 +107,7 @@ All of the code for completing the project is contained in [this jupyter noteboo
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+
 
 ---
 
