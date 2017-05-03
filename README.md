@@ -41,22 +41,30 @@ Images can now be transformed ('warped') to and back from a birds-eye-view using
 
 ## Lane Line Detection
 
-The  warped camera image serves as a basis for detecting pixels which are likely part of a lane line before fitting a polynomial to get a functional description of each of the lane lines. 
+The warped camera image serves as a basis for detecting pixels which are likely part of a lane line before fitting a polynomial to get a functional description of each lane line. 
+The following image serves as an example for visualizing the lane line detection pipeline (left: distortion corrected image, right: image warped into birds-eye-view):
+
+![alt-text-1](./readme_images/input.png "distortion corrected imag") ![alt-text-1](./readme_images/input_warped.png "warped into birds-eye-view") 
+
 
 ### Edge Detection
 
-After converting the image to grayscale, edge detection is performed separately for x- and y-direction by convolving the image with a sobel kernel that simultaneously smooths the image.
-Afterwards a sobel binary image is created (via thresholding) that only contains ones at the locations where there is a large gradient in x-direction and a small gradient in y-direction (cell 12)
+After converting the image to grayscale, edge detection is performed separately in x- and y-direction by always convolving the image with a sobel kernel that simultaneously smooths the image.
+Afterwards a sobel binary image is created via thresholding, that only contains ones (shown as white areas in the images) at the locations where there is a large gradient in x-direction and a small gradient in y-direction (cell 12):
 
-#TODO example images
+![alt-text-1](./readme_images/gray.png "grayscaled image") ![alt-text-1](./readme_images/sobel.png "thresholded sobel image") 
+
 
 ### Color Channel Thresholding
 
-The warped (birds-eye-view) color image gets converted to HLS color space where a threshold is applied to the S-channel.
-Another color threshold is applied to the R-channel of the warped color image in BGR color space. 
-The two resulting binary images get combined via logical "AND" operation to yield a common binary image.
+The warped (birds-eye-view) color image gets converted to HLS color space where a threshold is applied to the S-channel (left image).
+Another color threshold is applied to the R-channel of the warped color image in BGR color space (middle image). 
+The two resulting binary images get combined via logical "AND" operation to yield a common binary image (right image):
 
-#TODO example images
+![alt-text-1](./readme_images/s_binary.png "threshold on s-channel") ![alt-text-1](./readme_images/r_binary.png "threshold on r-channel") ![alt-text-1](./readme_images/s_r_binary.png "combined binary image") 
+
+
+
 
 ### Combination of Edge and Color Information
 
