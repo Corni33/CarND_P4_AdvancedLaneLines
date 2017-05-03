@@ -92,7 +92,7 @@ The polynomial additionally gets used to generate the lane mask for the next fra
 After the lane lines have been identified in the warped image the lane in the original image gets highlighting by 'unwarping' the polynomial's points and using them as boundary points for a lane polygon (cell ...). 
 The values of curvature and lateral offset are filtered by a low pass filter and then also displayed in the image:
 
-![alt-text-1](./readme_images/left_fit.png "final image with lane overlay") 
+![alt-text-1](./readme_images/final_image.png "final image with lane overlay") 
 
 
 ## Video Processing
