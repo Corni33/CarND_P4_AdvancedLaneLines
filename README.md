@@ -1,4 +1,4 @@
-# Adavanced Lane Line Detection
+# Advanced Lane Line Detection
 
 The goal of this project was to detect the lane line markings of the ego-lane using camera images.
 To achieve this, the following steps were performed:
