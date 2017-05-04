@@ -103,6 +103,20 @@ Here's a [link to the resulting video](./output.mp4) (converted to .mp4).
 
 ## Discussion
 
+The developed pipeline works quite well on the provided project video as can be seen in the video result. 
+On the challenge video however the lane line detection method sometimes performs poorly because it either considers the wrong structures as lane lines (e.g. asphalt grooves) or doesn't recognize lane markings at all (e.g. because of poor lighting conditions).
+
+One of the sources of this problem is the hardcoding of threshold values for detecting lane line edges and relevant lane line color regions.
+As soon as lighting conditions change or the color of a lane line is slightly out of the expected range, lane line detection performance deteriorates quickly.
+A possible solution for this problem would be to use adaptive thresholds based on appropriate metrics.
+
+Another possible optimization for the developed pipeline is to use a better lane model. 
+Instead of individually considering the left and right lane line, a single unifying lane model might be better suited e.g. to still keep track of the lane even when one lane line is missing completely.
+
+The temporal tracking of a lane could be improved by utilizing the vehicles ego motion. 
+In this way an acceptable estimate of the lane could still be provided even after losing the actual lane measurements over some frames of the video.
+
+
 
 
 
