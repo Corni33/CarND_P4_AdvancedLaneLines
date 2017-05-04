@@ -85,7 +85,7 @@ The results of this step are two sets of polynomial coefficients describing each
 ![alt-text-1](./readme_images/left_fit.png "parabola fitted for left lane line") ![alt-text-1](./readme_images/right_fit.png "parabola fitted for right lane line")
 
 From the polynomial coefficients the curvature of the lane at the vehicles current position as well as the vehicles lateral offset to the lane center can now be caluclated (cell 8). 
-The polynomial additionally gets used to generate the lane mask for the next frame (cell 11). In the very first frame of a video the masks get initialized with a rough estimate of the lane line positions.
+The polynomial additionally gets used to generate the lane line masks for the next frame (cell 11). In the very first frame of a video the masks get initialized with a rough estimate of the lane line positions.
 
 ### Lane Overlay 
 
