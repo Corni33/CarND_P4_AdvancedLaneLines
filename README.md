@@ -111,7 +111,7 @@ As soon as lighting conditions change or the color of a lane line is slightly ou
 A possible solution for this problem would be to use adaptive thresholds based on appropriate metrics.
 
 Another possible optimization for the developed pipeline is to use a better lane model. 
-Instead of individually considering the left and right lane line, a single unifying lane model might be better suited e.g. to still keep track of the lane even when one lane line is missing completely.
+Instead of individually considering the left and right lane line, a single unifying lane model might be better suited e.g. so as to still keep track of the lane even when one lane line is missing completely.
 
 The temporal tracking of a lane could be improved by utilizing the vehicles ego motion. 
 In this way an acceptable estimate of the lane could still be provided even after losing the actual lane measurements over some frames of the video.
