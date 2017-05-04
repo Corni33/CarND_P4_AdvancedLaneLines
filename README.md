@@ -14,7 +14,7 @@ All of the code for completing this project is contained in [this jupyter notebo
 
 ## Camera Calibration
 
-To compensate for the distortion effects (e.g. radial or tangential distortion) introduced by the camera lense a series of calibration images showing a calibration pattern (chessboard pattern) was has been provided.
+To compensate for distortion effects (e.g. radial or tangential distortion) introduced by the camera lense a series of calibration images showing a calibration pattern (chessboard pattern) was has been provided.
 After detecting the corners of the chessboard pattern in multiple images, OpenCV's calibrateCamera() function is used to calculate the distorition coefficients of the lense (notebook cell 3).
 These coefficients then get used to define a function for undistorting camera images (notebook cell 4) like in the following example:
 
