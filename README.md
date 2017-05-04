@@ -63,7 +63,7 @@ The two resulting binary images get combined via logical "AND" operation to yiel
 
 The binary image from color thresholding now gets combined with the binary image from edge detection via logical "OR" (cell 10).
 The result of this operation is a single binary image containing ones where we expect either lane line edges or the lane line marking itself to be (left image).
-Unfortunately most images contain other features that get misclassified as being part of the lane lines (a.g. road border, parts of other vehicles, ...) when applying the above thresholding logic.
+Unfortunately most images contain other features that get misclassified as being part of the lane lines (e.g. road border, parts of other vehicles, ...) when applying the above thresholding logic.
 In a first attempt to improve on this situation small isolated spots get removed by applying a morphological opening operation (right image):
 
 ![alt-text-1](./readme_images/binary_combined.png "combined binary image") ![alt-text-1](./readme_images/binary_combined_cleaned.png "cleaned up binary image")
