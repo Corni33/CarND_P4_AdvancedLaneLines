@@ -4,10 +4,10 @@ The goal of this project was to identify the lane line markings of the ego-lane 
 To achieve this, the following steps were performed:
 
 * Camera calibration (distortion correction) 
-* Perspective transformation to achiev a "birds-eye view" of the road
-* Lane pixel detection and polynomial fitting to find the lane boundary
-* Determining the curvature of the lane and vehicle position with respect to the lane center
-* Overlaying the detected lane markings onto the original camera image 
+* Perspective transformation to achieve a "birds-eye view" of the road
+* Lane line pixel detection and polynomial fitting to find the lane boundary
+* Determining the curvature of the lane and the lateral vehicle position with respect to the lane center
+* Overlaying the detected lane onto the original camera image 
 
 All of the code for completing the project is contained in [this jupyter notebook](https://github.com/Corni33/CarND_P4_AdvancedLaneLines/blob/master/advanced_lane_lines.ipynb).
 
