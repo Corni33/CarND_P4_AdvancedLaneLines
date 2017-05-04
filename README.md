@@ -45,7 +45,7 @@ The following image serves as an example for visualizing the whole lane line det
 ### Edge Detection
 
 After converting the image to grayscale, edge detection is performed separately in x- and y-direction by always convolving the image with a sobel kernel that simultaneously smooths the image (cell 10).
-Afterwards a sobel binary image is created via thresholding, that only contains ones (shown as white areas in the images) at the locations where there is a large gradient in x-direction and a small gradient in y-direction (cell 10):
+Afterwards a sobel binary image is created via thresholding, that only contains ones (shown as white areas in the image) at the locations where there is a large gradient in x-direction and a small gradient in y-direction (cell 10):
 
 ![alt-text-1](./readme_images/gray.png "grayscaled image") ![alt-text-1](./readme_images/sobel.png "thresholded sobel image") 
 
