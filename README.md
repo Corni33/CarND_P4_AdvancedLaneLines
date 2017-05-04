@@ -72,7 +72,7 @@ In a first attempt to improve on this situation small isolated spots get removed
 ### Line Area Masking
 
 To get a better estimate of which pixels belong to the left and right lane line respectively, the binary image now gets masked (by applying logical "AND") with a distinct lane line mask for each lane line (cell 10).
-A lane line mask contains an area estimate for where the lane line might be now given that we know where it was in the last frame that has been processed:
+A lane line mask contains an area estimate for where the lane line might be now given that we know where it was in the last frame that has been processed. The lane line masks might look something like this:
 
 ![alt-text-1](./readme_images/mask_left.png "mask for left lane line") ![alt-text-1](./readme_images/mask_right.png "mask for right lane line")
 
