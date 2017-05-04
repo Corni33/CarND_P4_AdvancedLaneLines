@@ -9,7 +9,7 @@ To achieve this, the following steps were performed:
 * Determining the curvature of the lane and the lateral vehicle position with respect to the lane center
 * Overlaying the detected lane onto the original camera image 
 
-All of the code for completing the project is contained in [this jupyter notebook](https://github.com/Corni33/CarND_P4_AdvancedLaneLines/blob/master/advanced_lane_lines.ipynb).
+All of the code for completing this project is contained in [this jupyter notebook](https://github.com/Corni33/CarND_P4_AdvancedLaneLines/blob/master/advanced_lane_lines.ipynb).
 
 
 ## Camera Calibration
